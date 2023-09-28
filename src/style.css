@@ -29,14 +29,15 @@
     background-color: rgb(132, 220, 207);
   
 }
-.main{
+
+
+.btnn:hover{
+  background-color: rgb(25, 146, 216);
+  cursor: pointer;
+}
+.container{
   display: flex;
   padding: 100px;
   justify-content: space-around;
   flex-wrap: wrap;
-  
-}
-.btnn:hover{
-  background-color: rgb(25, 146, 216);
-  cursor: pointer;
 }

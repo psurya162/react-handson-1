@@ -1,31 +1,44 @@
+import React from 'react'
 import './style.css'
-import Btn from "./BTn";
-// import FunctionCompo from './FunctionCompo';
-// import ClassCompo from './ClassCompo';
+import Head from './Head'
+import ClassCompo from './ClassCompo'
+import FunctionCompo from './FunctionCompo'
 
+class App extends React.Component{
+  constructor(){
+      super()
+      this.state= {
+          count1:false,
+          count2:false,
+      }
+  }
 
-
-
-function App() {
-  return (
-
-    <>
-    
-    <div className="App">
-      <h1 style={{textAlign:"center", textTransform:"uppercase"}}>Style using Function And class COmponent</h1>
-      <Btn/>
+  render(){
+      return(
+          
+          <>
+          <Head/>
+           <div className="btn-container">
+              
+              <button 
+              className="btnn" 
+              onClick={()=> this.setState({count1: !this.state.count1})}>Too See Styling in Function component</button>
+              
+              <button 
+              className="btnn" 
+              onClick={()=> this.setState({count2: !this.state.count2})}>Too See Styling in Class Component</button>
+               {/*  */}
+           </div>
+           <div className="container">
+           {this.state.count1 && <FunctionCompo/>}
+           {this.state.count2 && <ClassCompo/>}
+           </div>
+           
+          
+          </>
+      )
       
-      
-     
-      
-      
-    </div>
-    {/* <div className="main">
-      <FunctionCompo/>
-      <ClassCompo/>
-    </div> */}
-    </>
-  );
+  }
 }
 
 export default App;
